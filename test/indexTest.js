@@ -19,9 +19,29 @@ describe("index.js", () => {
     const keyboardEvent = new KeyboardEvent("keydown", { key });
     document.body.dispatchEvent(keyboardEvent);
   }
-  
-  init()
+  const input = document.querySelector('input')
 
+input.addEventListener('keydown', function(e){
+  console.log(e);
+}
+
+  init()
+  
+const alphabet = ['a', 'b', 'c']
+let index = 0
+function onKeyDownHandler(e)
+  const.key = e.key;
+  if (key === alphabet[index]) {
+    index++'
+    if (index === alphabet.length)  {
+      alert("Hurray!");
+      
+      index = 0
+    }
+  } else {
+    index = 0;
+  }
+}
   describe("Konami code", () => {
     
     const spy = sinon.stub(window, "alert");
